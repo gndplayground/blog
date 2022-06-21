@@ -1,0 +1,43 @@
+---
+title: Why do we even need react-query?
+tags:
+  - react
+---
+
+## Intro (Can skip)
+
+Recently React team published React to version 18. Everything seems fine until everybody finds out about a weird behaviour with `useEffect` hook. It will render twice if the following example code runs on strict mode.
+
+```jsx
+useEffect(() => {
+  fetchSomething.then((data) => {
+    setDataState(data);
+  });
+}, []);
+```
+
+[https://github.com/facebook/react/issues/24502](https://github.com/facebook/react/issues/24502).
+
+To resolve this, Dan wrote an example to solve the problem and suggested we can use a library like **react-query** to handle fetching data properly.
+
+```jsx
+useEffect(() => {
+  let ignore = false;
+  fetchStuff().then((res) => {
+    if (!ignore) setResult(res);
+  });
+  return () => {
+    ignore = true;
+  };
+}, []);
+```
+
+This caused the community to rage at first and everybody asked why the do we even need a library like **react-query** to do some simple fetch data.
+
+However, this blog post won't explain why does the new hook behave like that. If you are interested in it, you can view the Github issue and the link to the beta doc on it. I want to write a blog post explaining why we should use a library like **react-query** to handle fetching data.
+
+## The problem
+
+Suppose the boss asks us to do a simple product listing screen like this.
+
+[Insert Image]
