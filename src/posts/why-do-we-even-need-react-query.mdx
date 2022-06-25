@@ -37,7 +37,7 @@ useEffect(() => {
 }, []);
 ```
 
-This caused the community to rage at first and everybody asked why the do we even need a library like **react-query**
+This caused the community to rage at first and everybody asked why do we even need a library like **react-query**
 to do some simple fetch data.
 
 However, this blog post won't explain why does the new hook behave like that. If you are interested in it,
@@ -49,15 +49,6 @@ use a library like **react-query** to handle fetching data.
 Suppose the boss asks us to do a simple product listing screen like this.
 
 ![A simple mockup product table list](../images/post/why-do-we-even-need-react-query/table-product.png)
-
-<figure>
-
-  ![Example skeleton loading. Source: https://github.com/TanStack/table/discussions/2386](../images/post/why-do-we-even-need-react-query/skeleton-loading.gif)
-
-  <figcaption>
-    Example about skeleton loading.
-  </figcaption>
-</figure>
 
 The backend guy gives us an API to fetch these data. Ok, so what should we do to get the data and display products.
 Maybe write the code like below.
