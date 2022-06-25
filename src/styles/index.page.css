@@ -1,0 +1,130 @@
+.intro {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-height: 500px;
+}
+
+.intro__inner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.intro__content {
+  padding-top: 2rem;
+  flex: 1;
+}
+
+.intro__me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro__deco {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.intro__deco > * {
+  display: flex;
+  margin-left: 16px;
+  position: relative;
+}
+
+@keyframes deco1 {
+  from {
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    transform: translate3d(0, 4px, 0);
+  }
+}
+
+@keyframes deco2 {
+  from {
+    transform: translate3d(0, -10px, 0);
+  }
+  to {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes deco3 {
+  from {
+    transform: translate3d(0, -3px, 0);
+  }
+  to {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+@keyframes deco4 {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.intro__deco > *:nth-child(1) {
+  will-change: transform;
+  transform: translate3d(0, 10px, 0);
+  animation-name: deco1;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+}
+
+.intro__deco > *:nth-child(2) {
+  bottom: -20px;
+  will-change: transform;
+  transform: translate3d(0, -10px, 0);
+  animation-name: deco2;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-out;
+}
+
+.intro__deco > *:nth-child(3) {
+  top: 2px;
+  will-change: transform;
+  transform: translate3d(0, -3px, 0);
+  animation-name: deco3;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+}
+
+.intro__deco > *:nth-child(4) {
+  bottom: -20px;
+  animation-name: deco4;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation-duration: 8000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@media screen and (min-width: 768px) {
+  .intro__content {
+    padding-top: 0;
+    margin-right: 1.5rem;
+  }
+
+  .intro__inner {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .intro__me {
+    display: block;
+  }
+}

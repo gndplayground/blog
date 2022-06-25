@@ -1,0 +1,77 @@
+.blog-body {
+  margin-top: 1.5rem;
+}
+
+.blog-body p {
+  margin-bottom: 1.5rem;
+}
+
+.blog-body strong,
+.blog-body code {
+  background-color: var(--color-primary-light);
+  display: inline-block;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: var(--color-primary);
+}
+
+.blog-body h2 {
+  font-size: 2rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+}
+
+.blog-body h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.blog-body h3 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.blog-body figcaption {
+  font-size: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+}
+
+.blog-body figure {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.blog-body figure > p {
+  margin-bottom: 0.5rem;
+}
+
+.blog-body ul {
+  list-style-type: disc;
+}
+
+.blog-body ul > li {
+  margin-bottom: 1rem;
+}
+
+/*maybe for gif image*/
+.blog-body p > img {
+  width: auto;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .blog-body h2 {
+    font-size: 2.25rem;
+    line-height: 3rem;
+  }
+
+  .blog-body h3 {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+}
