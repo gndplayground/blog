@@ -23,6 +23,22 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZB1EC3Z5SF"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZB1EC3Z5SF');
+        `,
+          }}
+        />
       </body>
     </html>
   );
