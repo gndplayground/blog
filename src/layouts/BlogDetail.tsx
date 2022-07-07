@@ -22,7 +22,12 @@ export default function BlogDetail(props: Props) {
   const title = pageContext.frontmatter?.title;
   const intro = pageContext.frontmatter?.intro;
   const date = new Date(pageContext.frontmatter.date);
+  const edit = pageContext.frontmatter.edit
+    ? new Date(pageContext.frontmatter.edit)
+    : undefined;
   const tags = pageContext.frontmatter.tags;
+
+  console.log(pageContext.frontmatter);
 
   const { pathname } = useLocation();
 
@@ -64,6 +69,7 @@ export default function BlogDetail(props: Props) {
       <article>
         <h1 className="font-title color-primary">{title}</h1>
         <p>
+          Published on{" "}
           <time dateTime={pageContext.frontmatter.date}>
             {date.getDate()}/{date.getMonth() + 1}/{date.getFullYear()} -{" "}
             {date.getHours()}:{date.getMinutes()}
@@ -81,6 +87,12 @@ export default function BlogDetail(props: Props) {
             );
           })}
         </p>
+        {edit && (
+          <time className="blog-edited">
+            Edited on: {edit.getDate()}/{edit.getMonth() + 1}/
+            {edit.getFullYear()} - {edit.getHours()}:{edit.getMinutes()}
+          </time>
+        )}
         <div className="blog-body">
           <MDXProvider
             components={{

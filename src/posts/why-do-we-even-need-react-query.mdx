@@ -5,7 +5,21 @@ tags:
   - react
   - frontend
 date: 2022-06-21T19:56:20.972Z
+edit: 2022-07-07T17:50:58.546Z
 ---
+
+## tl;dr
+
+`react-query` can help us with a few critical things while retrieving the data from an API endpoint.
+
+- Fetching states like loading, error.
+- Interval refetch.
+- Cached the data to reuse later and reduce loading states.
+- Invalidate cached data.
+- Cancellation.
+- Optimistic updates.
+
+We don't have to write much code to support these features and have time to focus on writing code for business logic.
 
 ## Intro (Can skip)
 
@@ -186,8 +200,8 @@ But I believe you eventually will have to do it in the future. Because these fea
 There still are a lot of cases missing out there, but the important thing is at least every feature I mention here
 can be solved by **react-query** so you don't have to write a lot of code or implement the caching system by yourself.
 
-Trust me, it's not an easy thing to do. I tried to solve these problems with **Redux** in the past.
-**Redux** is not bad, however, it's just a generic global state so we still have to write a lot of code.
+Trust me, it's not an easy thing to do. I tried to solve these problems with **Redux** in the past (before **redux-toolkit** and **RTK query**)
+**Redux** at that time was not bad, however, it's just a generic global state so we still have to write a lot of code.
 
 ## Slightly introduction to react-query
 
@@ -317,7 +331,7 @@ which makes it easier for us to integrate these actions into the user interface.
 import { useMutation } from "react-query";
 
 function Panel() {
-  const { error, isLoading } = useMutation(
+  const { error, isLoading, mutate } = useMutation(
     (data) => {
       return axios.post("/product", data);
     },

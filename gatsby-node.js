@@ -41,6 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               intro
               tags
               date
+              edit
             }
             body
             tableOfContents
